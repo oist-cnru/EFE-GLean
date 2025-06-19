@@ -1,0 +1,33 @@
+[save]
+rowMajorW = true
+
+[data]
+enableNorm = true
+nSeq = 80
+normMax = 0.75
+normMin = -0.75
+rawDim = 2
+rawMax = 2.810442209243774
+rawMin = 0.1764462739229202
+seqLen = 25
+
+[data1]
+enableNorm = false
+nSeq = 80
+normMax = -1.0
+normMin = -1.0
+rawDim = 4
+rawMax = 1.0
+rawMin = 0.0
+seqLen = 25
+
+[data2]
+enableNorm = false
+nSeq = 80
+normMax = -1.0
+normMin = -1.0
+rawDim = 4
+rawMax = 1.0
+rawMin = 0.0
+seqLen = 25
+

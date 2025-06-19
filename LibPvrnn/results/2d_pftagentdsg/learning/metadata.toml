@@ -1,0 +1,33 @@
+[save]
+rowMajorW = true
+
+[data]
+enableNorm = false
+nSeq = 20
+normMax = -1.0
+normMin = -1.0
+rawDim = 4
+rawMax = 1.0
+rawMin = 0.0
+seqLen = 3
+
+[data1]
+enableNorm = false
+nSeq = 20
+normMax = -1.0
+normMin = -1.0
+rawDim = 4
+rawMax = 1.0
+rawMin = 0.0
+seqLen = 3
+
+[data2]
+enableNorm = false
+nSeq = 20
+normMax = -1.0
+normMin = -1.0
+rawDim = 2
+rawMax = 1.0
+rawMin = 0.0
+seqLen = 3
+

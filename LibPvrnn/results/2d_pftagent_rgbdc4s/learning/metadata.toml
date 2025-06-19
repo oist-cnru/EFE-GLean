@@ -1,0 +1,43 @@
+[save]
+rowMajorW = true
+
+[data]
+enableNorm = true
+nSeq = 64
+normMax = 0.75
+normMin = -0.75
+rawDim = 2
+rawMax = 2.753895044326782
+rawMin = 0.2203570008277893
+seqLen = 60
+
+[data1]
+enableNorm = true
+nSeq = 64
+normMax = 0.75
+normMin = -0.75
+rawDim = 3
+rawMax = 1.0
+rawMin = 0.0
+seqLen = 60
+
+[data2]
+enableNorm = true
+nSeq = 64
+normMax = 0.75
+normMin = -0.75
+rawDim = 4
+rawMax = 0.75
+rawMin = 0.2251090407371521
+seqLen = 60
+
+[data3]
+enableNorm = true
+nSeq = 64
+normMax = 0.75
+normMin = -0.75
+rawDim = 3
+rawMax = 1.0
+rawMin = 0.0
+seqLen = 60
+

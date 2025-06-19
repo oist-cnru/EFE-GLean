@@ -1,0 +1,70 @@
+[dataset]
+dataset_path = "../datasets/2dagent/pftmazeds_20_3_10.npy" # relative to config
+slices = [ 4, 4, 2 ] # same order as output layers
+n_seq = 20
+seq_len = 3
+output_size = 10
+minibatch_size = -1
+norm.enable  = true   # enable normalization; if false, other norm.* param are useless
+norm.raw_min = 0   # raw data minimum; if set to 0 both, will auto compute the min/max
+norm.raw_max = 0   # raw data maximum
+#norm.min     =  0.0   # norm min; if 0 both, picks defaults values based on output layer (recommended)
+#norm.max     =  1.0   # norm max
+
+[network]
+sigma_min = 0.00001  # A's sigma clipping min
+sigma_max = 5.0      # A's sigma clipping max
+zero_init = true     # zero initialization
+fixed_zp0 = false
+fixed_h0  = false
+layers = [  # parameters for each of the layers, starting at the bottom layer
+    { type = "sm_out", temp = 1.0 }, { type = "sm_out", temp = 1.0 }, { type = "sm_out", temp = 1.0 },
+    { type = "pvrnn", d = 10, z = 2, tau = 1, w = 0.1, beta = 1.0 }
+]
+
+[training]
+n_epoch        = 500000 # number of epochs to train
+save_interval  = 10000   # Save the network weights and sequences every `save_interval` epochs
+save_directory = "2d_pftagentdsg"
+weight_decay   = 0.0005
+rng_seed       = 42
+
+[training.optimizer]
+name       = "adam"
+adam.alpha = 0.001 # parameters for Adam optimizer (training)
+adam.beta1 = 0.9
+adam.beta2 = 0.999
+
+[er]
+window_size    = 3   # size of the ER window
+grow_window    = true # enable a growing window at the start
+epoch_to_load  = -1   # which training epoch to load. -1 for the latest.
+n_itr          = 100  # number of ER iterations per timestep
+pred_step      = 2   # prediction step after the current timestep
+total_step     = 3
+save_directory = "2d_pftagentdsg"
+rng_seed       = -1
+w    = []
+beta = []
+
+[er.optimizer]
+adam.alpha = 0.1
+adam.beta1 = 0.9
+adam.beta2 = 0.999
+
+[planning]
+window_size    = 3    # size of the ER window
+grow_window    = false # enable a growing window at the start
+epoch_to_load  = -1   # which training epoch to load. -1 for the latest.
+n_itr          = 100  # number of ER iterations per timestep
+pred_step      = 0    # prediction step after the current timestep
+total_step     = 3
+save_directory = "2d_pftagentdsg"
+rng_seed       = -1
+w    = []
+beta = []
+
+[planning.optimizer]
+adam.alpha = 0.1
+adam.beta1 = 0.9
+adam.beta2 = 0.999
